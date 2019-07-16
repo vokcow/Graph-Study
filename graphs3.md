@@ -5,19 +5,19 @@
 ## 1.Intro:
 
  Recently, I have found out about the amazing topic of Graphs. One of the questions that I had when I started studiying was: to which field Graphs belong?
- Is it **Mathematics**? That would make sense if, for example, we bring ourselves back to Euler's time, when the Genius proved that it was impossible to visit every place in Königsberg crossing each of its seven bridges only once.[$\textit{(1)}$](https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/).
- Perhaps **Computer Science**? Graphs are themselves a data structure, and even a program workflow can be modelled with a graph [$\textit{(2)}$](https://www.youtube.com/watch?v=cWIeTMklzNg).
-> Other examples can be found in **Medicine**, **Physics**, in **Molecular Biology** for **Drug Desing** [$\textit{(3)}$](https://arxiv.org/pdf/1812.08434.pdf), depicting **social networks** (facebook, linkedin), the **World Wide Web**... [$\textit{(4)}$](https://www.youtube.com/watch?v=gXgEDyodOJU).
+ Is it **Mathematics**? That would make sense if, for example, we bring ourselves back to Euler's time, when the Genius proved that it was impossible to visit every place in Königsberg crossing each of its seven bridges only once.(1)(https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/).
+ Perhaps **Computer Science**? Graphs are themselves a data structure, and even a program workflow can be modelled with a graph (2)(https://www.youtube.com/watch?v=cWIeTMklzNg).
+> Other examples can be found in **Medicine**, **Physics**, in **Molecular Biology** for **Drug Desing** (3)(https://arxiv.org/pdf/1812.08434.pdf), depicting **social networks** (facebook, linkedin), the **World Wide Web**... (4)(https://www.youtube.com/watch?v=gXgEDyodOJU).
 
 So they have shown to be a powerful tool for modelling a truly wide range of things. 
 > But how are we supposed to treat them, mathematically speaking?
 
-Well, a formal definition could be as follows [$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
+Well, a formal definition could be as follows (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
 
-> *a graph is an ordered pair G=G(V,E) of sets such as* ![png](eq_1.png)
+> a graph is an ordered pair G=G(V,E) of sets such as ![png](eq_1.png)
 
 In this post, I will present some of properties of fundamental Graphs. I won't derivate the results I will be presenting. The interested reader will find any of the resources that drived me to write this post in the Further Reading section.
-> I found specially usefull [$\textit{(5)}$](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/) and [$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf), so if you, like me, are discovering the world of graphs, make sure you check them out.
+> I found specially usefull (5)(https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/) and (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf), so if you, like me, are discovering the world of graphs, make sure you check them out.
 
 Here we will discuss *easy* graphs: only undirected (every edge is bidirectional), simple (no auto-nodes) and finite Graphs.
 
@@ -26,7 +26,7 @@ Let's consider the following **Python 3** class for a Graph. It will store the g
 >  The Adjacency List of a Graph is a data structure containing **each of the Graph nodes** with a respective **lists of the neighbour nodes**.
 Guess what data structure it is? Yes... it's a Python Dict
 
-> So the Graph Class stores a Graph as an Adjacency List, allows addition of edges or nodes to the graph, and drawing it. For the drawing part the *networkx* [$\textit{(7)}$](https://networkx.github.io/) python package has been used.
+> So the Graph Class stores a Graph as an Adjacency List, allows addition of edges or nodes to the graph, and drawing it. For the drawing part the *networkx* (7)(https://networkx.github.io/) python package has been used.
 
 
 ```python
@@ -100,24 +100,17 @@ class Graph(object):
 ## 3. Graph Matrix Representations
 Besides the Adjacency List, there exist other representations, that can be computationally expensive, but are interesting for studying fundamental properties of Graphs.$$$$
 One of them is the **Adjacency Matrix**, in which each row represent a node and the entries that are 1 instead 0 stand for the neighbour node positions with respect to this node.
-$$a_{ij} = 
-     \begin{cases}
-       \text{1,} &\quad\text{if  } \{\text{i,j}\} \in \text{E}\\
-       \text{0} &\quad\text{otherwise  } \\ 
-     \end{cases}$$
+
+![png](eq_2.png)
+
 > Note that, if the graph has no *autonodes*, then all diagonal entries in its Adjacency Matrix are equal to zero.
 
 Another representation of a Graph is its **Laplacian Matrix**. The diagonal entries of the Laplacian Matrix are equal to the node degree, i.e., how many edges are connecting to the node represented at this position in the diagonal.
-$$$$
+
 The other entries in the Laplacian Matrix are equal to -1 when they row-column position correspond to the nodes forming an edge in the graph.
-$$ $$
-$$l_{ij} = 
-     \begin{cases}
-       \text{degree(i),} &\quad\text{if  } i=j   \\
-       \text{-1,} &\quad\text{if  } i\neq \text{j and  } \{\text{i,j}\} \in \text{E}\\
-       \text{0} &\quad\text{otherwise  } \\ 
-     \end{cases}$$
-     $$ $$
+
+![png](eq_3.png)
+
 > The Laplacian Matrix verifies that **adding up all entries within a row or a column the result is zero**. This is an important property from which meanful information about the Laplacian eigenvalues is derived.
 
 > Perhaps you thought about it already, **does not the Adjency Matrix of a Graph depend on the order in which we decide to name the nodes?**$$$$
@@ -187,29 +180,17 @@ A2 egienvectors: {3}, {4}, {5}, {7}".format(ws1[0],ws1[1],ws1[2],ws1[3],ws2[0],w
 
 ## 4.Some fundamental properties of some fundamental Graphs
 We will study three important Graphs:
-* The Complete Graph $K_{n}$
-* The Cicle Graph $K_{n}$
-* The Path Graph $P_{n}$
-It can be proven that, given an undirected graph, one of its eigenvalues is always zero.[$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf).
+* The Complete Graph **K_n**
+* The Cicle Graph **K_n**
+* The Path Graph **C_n**
+It can be proven that, given an undirected graph, one of its eigenvalues is always zero.(6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf).
 
 #### 4.1 Complete Graph:
 In a complete graph, every node is connected with all others. In other words, if the graph has n nodes, every node in the graph is of degree n-1, so it's adjacency Matrix is:
-$$A=\begin{pmatrix}
-0&1&1&.&1\\
-1&0&1&..&1\\
-.&..&0&..&.\\
-1&1&..&..&.\\
-1&1&..&..&0
-\end{pmatrix},$$
+![png](eq_4.png),
 and its Laplacian Matrix
-$$L=\begin{pmatrix}
-n-1&-1&-1&.&-1\\
--1&n-1&-1&..&.\\
--1&-1&n-1&..&.\\
-.&..&..&..&.\\
--1&-1&..&..&n-1
-\end{pmatrix}.$$
-> Below there is an example of $K_{4}$
+![png](eq_5.png)
+> Below there is an example of **K_4**
 
 
 ```python
@@ -237,9 +218,9 @@ print("Adejency Matrix: \n {0} \n \n Laplacian: \n {1}".format(Ak,Lk))
      [-1 -1 -1  3]]
     
 
-It can be proven that, given an undirected graph, one of its eigenvalues is always zero.[$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf). 
+It can be proven that, given an undirected graph, one of its eigenvalues is always zero.(6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf). 
 
-For the **complete Graph**, its Laplacian eigenvalue $0$ has multiplicity $1$ and it has only another eigenvalue of value $n$ and multiplicity $n-1$
+For the **complete Graph**, its Laplacian eigenvalue +0* has multiplicity *1* and it has only another eigenvalue of value **n** and multiplicity **n-1**
 
 
 ```python
@@ -253,22 +234,10 @@ print( " Eigen values: {0}".format(vs_Lk))
 
 #### 4.2 Cicle Graph:
 In a cicle graph, every node is connected with the previous and next node, and the last one with the first one. In other words, every node in the graph is of degree 2, so its adjency Matrix is:
-$$A=\begin{pmatrix}
-0&1&0&.&1\\
-1&0&..&..&.\\
-.&..&..&..&.\\
-0&1&..&0&1\\
-1&0&..&1&0
-\end{pmatrix},$$
+![png](eq_6.png)
 and its Laplacian Matrix is
-$$L=\begin{pmatrix}
-2&-1&0&.&-1\\
--1&2&-1&..&.\\
-0&-1&2&..&.\\
-.&..&..&..&.\\
--1&..&..&..&2
-\end{pmatrix}.$$
-> Below there is an example of $C_{4}$
+![png](eq_7.png)
+> Below there is an example of **C_4**
 
 
 ```python
@@ -296,10 +265,10 @@ print("Adejency Matrix: \n {0} \n Laplacian: \n {1}".format(Ac,Lc))
      [-1  0 -1  2]]
     
 
-For the **cicle Graph**, the Laplacian eigenvalues are given by the formula $$\lambda_{k}=2-2cos\Big(\frac{2\pi k}{n}\Big)$$
-con $k=0,1...\frac{n}{2}$
+For the **cicle Graph**, the Laplacian eigenvalues are given by the formula ![png](eq_11.png)
+con **k=0,1...n/2**
 
-Let's see that it works for $C_{4}$
+Let's see that it works for **C_4**
 
 
 ```python
@@ -313,22 +282,11 @@ print("Eigenvalues: {0}".format(vs_Lc))
 
 #### 4.3 Path Graph:
 It is pretty much like the Cicle Graph but with the differnece that its end and starting nodes are not connected. It can be seen as an *open* cicle Graph. Their Adjency and Laplacian matrices are like the ones of Cicle Graph but having $0$ instead of $1 (-1)$ in the entries $a_{1n} (l_{1n}), a_{n1}, (l_{n1})$:
-$$A=\begin{pmatrix}
-0&1&0&.&0\\
-1&0&..&..&.\\
-.&..&..&..&.\\
-0&1&..&0&1&\\
-0&0&..&1&0
-\end{pmatrix},$$
+![png](eq_8.png)
 and it's Laplacian Matrix is
-$$L=\begin{pmatrix}
-2&-1&0&.&0\\
--1&2&-1&..&.\\
-0&-1&2&..&.\\
-.&..&..&..&\\
-0&..&..&..&2
-\end{pmatrix}.$$
-> Below there is an example of $P_{4}$
+![png](eq_9.png)
+
+> Below there is an example of **P_4**
 
 
 ```python
@@ -355,10 +313,10 @@ print("Adjency Matrix: \n {0} \n Laplacian: \n {1} ".format(Ap,Lp))
      [ 0  0 -1  1]] 
     
 
-In the case of the **Path Graph**, its eigenvalues follow the formula[$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
+In the case of the **Path Graph**, its eigenvalues follow the formula (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
 
-$$\lambda_{k}=2-2cos\Big(\frac{\pi k}{n}\Big)$$
-con $k=0,1...n-1$
+![png](eq_10.png)
+con **k=0,1...n-1**
 
 Bellow there is the example for $P_{4}$
 
@@ -374,8 +332,8 @@ print("Eigenvalues: {0}".format(vs_Lp))
 
 ## 5. Conclussion
 
-Studiying the spectral propreties of the matricial Graph representations is usefull to obtain information about the *connectivity of the Graph*. Further study can show relations between the dimension of the associated eigenspaces and the connectivity of the Graph. Also, it is possible to set bounds to the expected eigenvalues for certain families of Graphs [$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf).$$$$
-However, for very big Graphs, the number of neighbours of each node may be small compared to the total number of nodes, and therefore, a matricial representation of such Graph would have many more zeros than non-zero entries. These are called spare matrices, and computing them (i.e. diagonalizing them) is very inneficient [$\textit{(2)}$](https://www.youtube.com/watch?v=cWIeTMklzNg).
+Studiying the spectral propreties of the matricial Graph representations is usefull to obtain information about the *connectivity of the Graph*. Further study can show relations between the dimension of the associated eigenspaces and the connectivity of the Graph. Also, it is possible to set bounds to the expected eigenvalues for certain families of Graphs (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf).$$$$
+However, for very big Graphs, the number of neighbours of each node may be small compared to the total number of nodes, and therefore, a matricial representation of such Graph would have many more zeros than non-zero entries. These are called spare matrices, and computing them (i.e. diagonalizing them) is very inneficient (2)(https://www.youtube.com/watch?v=cWIeTMklzNg).
 
 ## 6. Further Reading
 * *(1)* [Graph Data Structure And Algorithms - Geeks for Geeks](https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/)

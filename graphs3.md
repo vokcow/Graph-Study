@@ -5,7 +5,7 @@
 ## 1.Intro:
 
  Recently, I have found out about the amazing topic of Graphs. One of the questions that I had when I started studiying was: to which field Graphs belong?
- Is it **Mathematics**? That would make sense if, for example, we bring ourselves back to Euler's time, when the Genius proved that it was impossible to visit every place in Königsberg crossing each of its seven bridges only once.[1](https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/).
+ Is it **Mathematics**? That would make sense if, for example, we bring ourselves back to Euler's time, when the Genius proved that it was impossible to visit every place in Königsberg crossing each of its seven bridges only once.([1])(https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/).
  Perhaps **Computer Science**? Graphs are themselves a data structure, and even a program workflow can be modelled with a graph (2)(https://www.youtube.com/watch?v=cWIeTMklzNg).
 > Other examples can be found in **Medicine**, **Physics**, in **Molecular Biology** for **Drug Desing** (3)(https://arxiv.org/pdf/1812.08434.pdf), depicting **social networks** (facebook, linkedin), the **World Wide Web**... (4)(https://www.youtube.com/watch?v=gXgEDyodOJU).
 

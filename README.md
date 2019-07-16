@@ -282,7 +282,7 @@ print("Eigenvalues: {0}".format(vs_Lc))
     
 
 #### 4.3 Path Graph:
-It is pretty much like the Cicle Graph but with the differnece that its end and starting nodes are not connected. It can be seen as an *open* cicle Graph. Their Adjency and Laplacian matrices are like the ones of Cicle Graph but having $0$ instead of $1 (-1)$ in the entries $a_{1n} (l_{1n}), a_{n1}, (l_{n1})$:
+It is pretty much like the Cicle Graph but with the differnece that its end and starting nodes are not connected. It can be seen as an *open* cicle Graph. Their Adjency and Laplacian matrices are like the ones of Cicle Graph but having **0** instead of **1 (-1)** in the entries **a_1n (l_1n), a_n1, (l_n1)**:
 ![png](eq_8.png)
 and it's Laplacian Matrix is
 ![png](eq_9.png)
@@ -333,8 +333,8 @@ print("Eigenvalues: {0}".format(vs_Lp))
 
 ## 5. Conclussion
 
-Studiying the spectral propreties of the matricial Graph representations is usefull to obtain information about the *connectivity of the Graph*. Further study can show relations between the dimension of the associated eigenspaces and the connectivity of the Graph. Also, it is possible to set bounds to the expected eigenvalues for certain families of Graphs (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf).$$$$
-However, for very big Graphs, the number of neighbours of each node may be small compared to the total number of nodes, and therefore, a matricial representation of such Graph would have many more zeros than non-zero entries. These are called spare matrices, and computing them (i.e. diagonalizing them) is very inneficient (2)(https://www.youtube.com/watch?v=cWIeTMklzNg).
+Studiying the spectral propreties of the matricial Graph representations is usefull to obtain information about the *connectivity of the Graph*. Further study can show relations between the dimension of the associated eigenspaces and the connectivity of the Graph. Also, it is possible to set bounds to the expected eigenvalues for certain families of Graphs [6](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf).$$$$
+However, for very big Graphs, the number of neighbours of each node may be small compared to the total number of nodes, and therefore, a matricial representation of such Graph would have many more zeros than non-zero entries. These are called spare matrices, and computing them (i.e. diagonalizing them) is very inneficient [2](https://www.youtube.com/watch?v=cWIeTMklzNg).
 
 ## 6. Further Reading
 * *(1)* [Graph Data Structure And Algorithms - Geeks for Geeks](https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/)

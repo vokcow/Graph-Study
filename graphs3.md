@@ -6,27 +6,27 @@
 
  Recently, I have found out about the amazing topic of Graphs. One of the questions that I had when I started studiying was: to which field Graphs belong?
  Is it **Mathematics**? That would make sense if, for example, we bring ourselves back to Euler's time, when the Genius proved that it was impossible to visit every place in Königsberg crossing each of its seven bridges only once.[1](https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/).
- Perhaps **Computer Science**? Graphs are themselves a data structure, and even a program workflow can be modelled with a graph (2)(https://www.youtube.com/watch?v=cWIeTMklzNg).
-> Other examples can be found in **Medicine**, **Physics**, in **Molecular Biology** for **Drug Desing** (3)(https://arxiv.org/pdf/1812.08434.pdf), depicting **social networks** (facebook, linkedin), the **World Wide Web**... (4)(https://www.youtube.com/watch?v=gXgEDyodOJU).
+ Perhaps **Computer Science**? Graphs are themselves a data structure, and even a program workflow can be modelled with a graph [2](https://www.youtube.com/watch?v=cWIeTMklzNg).
+> Other examples can be found in **Medicine**, **Physics**, in **Molecular Biology** for **Drug Desing** [3](https://arxiv.org/pdf/1812.08434.pdf), depicting **social networks** (facebook, linkedin), the **World Wide Web**... [4](https://www.youtube.com/watch?v=gXgEDyodOJU).
 
 So they have shown to be a powerful tool for modelling a truly wide range of things. 
 > But how are we supposed to treat them, mathematically speaking?
 
-Well, a formal definition could be as follows (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
+Well, a formal definition could be as follows [6](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
 
-> a graph is an ordered pair G=G(V,E) of sets such as ![png](eq_1.png)
+a graph is an ordered pair G=G(V,E) of sets such as ![png](eq_1.png)
 
 In this post, I will present some of properties of fundamental Graphs. I won't derivate the results I will be presenting. The interested reader will find any of the resources that drived me to write this post in the Further Reading section.
-> I found specially usefull (5)(https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/) and (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf), so if you, like me, are discovering the world of graphs, make sure you check them out.
+> I found specially usefull [5](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/) and [6](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf), so if you, like me, are discovering the world of graphs, make sure you check them out.
 
 Here we will discuss *easy* graphs: only undirected (every edge is bidirectional), simple (no auto-nodes) and finite Graphs.
 
 ## 2. Graph class
-Let's consider the following **Python 3** class for a Graph. It will store the graph nodes in an **Adjancy list**, which is the most efficient way to store a Graph in terms of computing complexity [$\textit{(4)}$](https://www.youtube.com/watch?v=gXgEDyodOJU).
+Let's consider the following **Python 3** class for a Graph. It will store the graph nodes in an **Adjancy list**, which is the most efficient way to store a Graph in terms of computing complexity [4](https://www.youtube.com/watch?v=gXgEDyodOJU).
 >  The Adjacency List of a Graph is a data structure containing **each of the Graph nodes** with a respective **lists of the neighbour nodes**.
 Guess what data structure it is? Yes... it's a Python Dict
 
-> So the Graph Class stores a Graph as an Adjacency List, allows addition of edges or nodes to the graph, and drawing it. For the drawing part the *networkx* (7)(https://networkx.github.io/) python package has been used.
+> So the Graph Class stores a Graph as an Adjacency List, allows addition of edges or nodes to the graph, and drawing it. For the drawing part the *networkx* [7](https://networkx.github.io/) python package has been used.
 
 
 ```python
@@ -98,7 +98,8 @@ class Graph(object):
 ```
 
 ## 3. Graph Matrix Representations
-Besides the Adjacency List, there exist other representations, that can be computationally expensive, but are interesting for studying fundamental properties of Graphs.$$$$
+Besides the Adjacency List, there exist other representations, that can be computationally expensive, but are interesting for studying fundamental properties of Graphs.
+
 One of them is the **Adjacency Matrix**, in which each row represent a node and the entries that are 1 instead 0 stand for the neighbour node positions with respect to this node.
 
 ![png](eq_2.png)
@@ -113,9 +114,9 @@ The other entries in the Laplacian Matrix are equal to -1 when they row-column p
 
 > The Laplacian Matrix verifies that **adding up all entries within a row or a column the result is zero**. This is an important property from which meanful information about the Laplacian eigenvalues is derived.
 
-> Perhaps you thought about it already, **does not the Adjency Matrix of a Graph depend on the order in which we decide to name the nodes?**$$$$
+> Perhaps you thought about it already, **does not the Adjency Matrix of a Graph depend on the order in which we decide to name the nodes?**
 
-In fact, it does, and it turns out that, depending on the order in which graph nodes are labeled, the number of different adjency matrices for a given graph $G$ is given by: $$\frac{v!}{|Aut(G)|}$$ $$$$ where $v$ is the number of nodes, $Aut(G)$ is the automorphism group of the Graph, and $|Aut(G)|$ is the cardinality (number of elements) of this group [$\textit{(7)}$](http://mathworld.wolfram.com/AdjacencyMatrix.html)
+In fact, it does, and it turns out that, depending on the order in which graph nodes are labeled, the number of different adjency matrices for a given graph **G** is given by: ![png](eq_12.png) where **v** is the number of nodes, **Aut(G)** is the automorphism group of the Graph, and **|Aut(G)|** is the cardinality (number of elements) of this group [7](http://mathworld.wolfram.com/AdjacencyMatrix.html)
 
 The different Matrix representation of different order labeled graphs are just matrices in which some rows / columns have been permuted, so by the properties of determinants it follows that they have common eigenvalue basis. See the example below:
 
@@ -342,5 +343,5 @@ However, for very big Graphs, the number of neighbours of each node may be small
 * *(4)* [My code School - Data Structures - Introduction to Graphs](https://www.youtube.com/watch?v=gXgEDyodOJU)
 * *(5)* [Graph Data Structure And Algorithms - Geeks for Geeks](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)
 * *(6)* [An Introduction to Spectral Graph Theory Jiaqi Jiang University of Chicago](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf)
-* *(6)* [MathWorld Wolfram](http://mathworld.wolfram.com/AdjacencyMatrix.html)
-* *(6)* [Networkx Github Repo](https://networkx.github.io/)
+* *(7)* [MathWorld Wolfram](http://mathworld.wolfram.com/AdjacencyMatrix.html)
+* *(8)* [Networkx Github Repo](https://networkx.github.io/)

@@ -13,8 +13,8 @@ So they have shown to be a powerful tool for modelling a truly wide range of thi
 > But how are we supposed to treat them, mathematically speaking?
 
 Well, a formal definition could be as follows [$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
-$$$$
-> *a graph is an ordered pair $G=G(V,E)$ of sets such as* $E \subset \{\{x,y\}:x,y\in V, x\neq y\}$
+
+> *a graph is an ordered pair G=G(V,E) of sets such as* ![png](eq_1.png)
 
 In this post, I will present some of properties of fundamental Graphs. I won't derivate the results I will be presenting. The interested reader will find any of the resources that drived me to write this post in the Further Reading section.
 > I found specially usefull [$\textit{(5)}$](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/) and [$\textit{(6)}$](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf), so if you, like me, are discovering the world of graphs, make sure you check them out.

@@ -314,7 +314,7 @@ print("Adjency Matrix: \n {0} \n Laplacian: \n {1} ".format(Ap,Lp))
      [ 0  0 -1  1]] 
     
 
-In the case of the **Path Graph**, its eigenvalues follow the formula (6)(http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
+In the case of the **Path Graph**, its eigenvalues follow the formula [6](http://math.uchicago.edu/~may/REU2012/REUPapers/JiangJ.pdf):
 
 ![png](eq_10.png)
 con **k=0,1...n-1**
